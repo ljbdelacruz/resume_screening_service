@@ -1,0 +1,59 @@
+{
+  "name": "agentic-ai-resume-scanner",
+  "version": "0.1.0",
+  "description": "NestJS API for analyzing resumes against predefined job roles using Gemini.",
+  "scripts": {
+    "build": "nest build",
+    "start": "node dist/main.js",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "lint": "eslint \"{src,prisma}/**/*.ts\" --fix",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:deploy": "prisma migrate deploy",
+    "prisma:studio": "prisma studio",
+    "db:seed": "ts-node --project tsconfig.json prisma/seed.ts"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.10.0",
+    "@nestjs/axios": "^3.0.1",
+    "@nestjs/common": "^10.4.5",
+    "@nestjs/config": "^3.2.1",
+    "@nestjs/core": "^10.4.5",
+    "@nestjs/platform-express": "^10.4.5",
+    "@nestjs/swagger": "^7.4.2",
+    "@prisma/client": "^5.20.0",
+    "axios": "^1.7.7",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "file-type": "^21.0.0",
+    "joi": "^17.13.3",
+    "mammoth": "^1.6.0",
+    "pdf-parse": "^1.1.1",
+    "swagger-ui-express": "^5.0.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.3.2",
+    "@nestjs/schematics": "^10.1.0",
+    "@types/node": "^20.16.5",
+    "@types/pdf-parse": "^1.1.5",
+    "@typescript-eslint/eslint-plugin": "^8.8.0",
+    "@typescript-eslint/parser": "^8.8.0",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "prisma": "^5.9.1",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.6.2"
+  },
+  "prisma": {
+    "seed": "ts-node --project tsconfig.json prisma/seed.ts"
+  },
+  "engines": {
+    "node": ">=18.18.0",
+    "npm": ">=9.8.0"
+  }
+}
