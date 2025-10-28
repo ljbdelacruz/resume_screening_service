@@ -170,6 +170,41 @@ Query Parameters:
 }
 ```
 
+### List Google Drive files added in the past hour
+
+`GET /api/resume/drive/recent`
+
+Provide an OAuth access token issued for Google Drive (scope `drive.readonly` is sufficient). n8n can obtain this token and forward it via the `Authorization` header. The API uses `GOOGLE_DRIVE_RESUME_FOLDER_ID` as the default folder when no `folderId` query parameter is supplied.
+
+**Headers**
+
+```
+Authorization: Bearer ya29.a0Af...
+```
+
+**Query Parameters**
+
+- `sinceMinutes` (optional, default `60`) – look-back window in minutes.
+- `folderId` (optional) – override the default folder ID.
+- `mimeTypes` (optional) – comma-separated MIME types to include (e.g. `application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document`).
+
+**Response**
+
+```json
+[
+  {
+    "id": "1jLwiysK-nX0ocZ7JUGj33qy_en_KfyWd",
+    "name": "MyResume2025.pdf",
+    "mimeType": "application/pdf",
+    "createdTime": "2025-10-26T23:15:00.000Z",
+    "modifiedTime": "2025-10-26T23:20:00.000Z",
+    "sizeBytes": 122880,
+    "webViewLink": "https://drive.google.com/file/d/1jLwiysK-nX0ocZ7JUGj33qy_en_KfyWd/view",
+    "downloadUrl": "https://drive.google.com/uc?id=1jLwiysK-nX0ocZ7JUGj33qy_en_KfyWd&export=download"
+  }
+]
+```
+
 ## Testing with n8n
 
 Configure n8n HTTP Request node to POST resume URLs to `/api/resume/analyze`. Use the response body to continue candidate workflows.

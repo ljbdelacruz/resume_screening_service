@@ -65,7 +65,8 @@ export class ResumeService {
       jobRoles,
     });
 
-    const matchThreshold = this.configService.get<number>('app.resume.matchThreshold', 0.65);
+    const defaultThreshold = this.configService.get<number>('app.resume.matchThreshold', 0.65);
+    const matchThreshold = payload.matchThreshold ?? defaultThreshold;
     const candidateEmail = ResumeService.extractEmail(file.textContent);
 
     return {

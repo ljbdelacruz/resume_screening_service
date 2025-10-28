@@ -19,7 +19,6 @@ yarn-error.log*
 
 # Environment variables
 .env
-.env.*
 
 # Prisma
 prisma/migrations/**/migration_lock.toml

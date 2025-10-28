@@ -14,6 +14,7 @@ type ResumeScannerConfig = {
   resume: {
     matchThreshold: number;
     maxFileSizeBytes: number;
+    defaultDriveFolderId?: string;
   };
   swagger: {
     enabled: boolean;
@@ -39,6 +40,7 @@ export default registerAs<ResumeScannerConfig>('app', () => ({
     matchThreshold: parseFloat(process.env.RESUME_MATCH_THRESHOLD ?? '0.65'),
     maxFileSizeBytes:
       parseInt(process.env.RESUME_MAX_FILE_SIZE_MB ?? '15', 10) * 1024 * 1024,
+    defaultDriveFolderId: process.env.GOOGLE_DRIVE_RESUME_FOLDER_ID,
   },
   swagger: {
     enabled: process.env.SWAGGER_ENABLED !== 'false',

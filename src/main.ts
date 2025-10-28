@@ -39,6 +39,7 @@ async function bootstrap(): Promise<void> {
       .setDescription(swaggerSettings.description)
       .setVersion(swaggerSettings.version)
       .addTag('Resume', 'Resume analysis operations')
+      .addTag('Google Drive', 'Google Drive integrations for resume workflows')
       .build();
 
     const document = SwaggerModule.createDocument(app, swaggerConfig);
