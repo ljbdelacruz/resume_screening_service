@@ -1,5 +1,10 @@
 # Agentic AI Resume Scanner
 
+## Demo Video:
+> watch how i utilized this service in n8n
+https://www.youtube.com/watch?v=uryGBGjsKbo
+
+
 NestJS API for analyzing resumes against predefined job roles using Google Gemini and Prisma/PostgreSQL.
 
 ## Features
